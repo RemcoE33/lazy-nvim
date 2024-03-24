@@ -23,6 +23,7 @@ km.set("v", "K", ":m '<-2<CR>gv=gv") -- move highlighted lines down
 km.set("n", "n", "nzzzv") -- center cursor while go to next search
 km.set("n", "N", "Nzzzv") -- center cursor while go to prev seach
 km.set("n", "J", "mzJ`z") -- places current line to the one above with space
+km.set("n", "G", "Gzz") -- center cursor while go to end of file
 
 -- trouble
 km.set("n", "<leader>xx", "<cmd>TroubleToggle<cr>", { silent = true, noremap = true })
@@ -43,3 +44,7 @@ km.set("n", "<leader>5", '<cmd>lua require("harpoon.ui").nav_file(5)<cr>')
 
 -- MarkdownTable
 km.set("n", "<leader>mt", "<cmd>TableModeToggle<cr>")
+
+-- UFO folding
+vim.keymap.set("n", "zR", require("ufo").openAllFolds)
+vim.keymap.set("n", "zM", require("ufo").closeAllFolds)

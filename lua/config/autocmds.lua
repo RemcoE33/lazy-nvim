@@ -14,19 +14,26 @@ end, {})
 local pick = require("telescope.pickers")
 local find = require("telescope.finders")
 local sort = require("telescope.sorters")
-
+local actions = require("telescope.actions")
+local action_state = require("telescope.actions.state")
 vim.api.nvim_create_user_command("BS", function()
   local opts = {
     finder = find.new_table({ "json", "go", "markdown", "javascript", "typescript", "html", "xml" }),
     sorter = sort.get_generic_fuzzy_sorter({}),
   }
 
-  local syn = pick.new(opts, {})
-  local syntax = syn:find()
-
-  if syntax then
-    vim.cmd("setlocal filetype=" .. syntax)
-  end
+  pick
+    .new(opts, {
+      attach_mappings = function(prompt_bufnr, _)
+        actions.select_default:replace(function()
+          actions.close(prompt_bufnr)
+          local selection = action_state.get_selected_entry()
+          vim.bo.filetype = selection.value
+        end)
+        return true
+      end,
+    })
+    :find()
 end, {})
 
 local build_commands = {
