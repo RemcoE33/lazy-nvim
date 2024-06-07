@@ -38,4 +38,13 @@ return {
   {
     "https://github.com/vkolev/gappscript-vim",
   },
+  {
+    "norcalli/nvim-colorizer.lua",
+    opts = {
+      "css",
+      "javascript",
+      "svelte",
+      "html",
+    },
+  },
 }

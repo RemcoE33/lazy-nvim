@@ -6,8 +6,8 @@ local km = vim.keymap
 
 km.set("i", "jk", "<Esc>")
 km.set("n", "<leader>nh", ":nohl<CR>") -- clear highline
-km.set("n", "p", [[:let temp=@0<CR>:normal! "0p<CR>:let @0=temp<CR>]], { noremap = true, silent = true }) -- don't copy to clipboard
-km.set("n", "P", [[:let temp=@0<CR>:normal! "0P<CR>:let @0=temp<CR>]], { noremap = true, silent = true })
+-- km.set("n", "p", [[:let temp=@0<CR>:normal! "0p<CR>:let @0=temp<CR>]], { noremap = true, silent = true }) -- don't copy to clipboard
+-- km.set("n", "P", [[:let temp=@0<CR>:normal! "0P<CR>:let @0=temp<CR>]], { noremap = true, silent = true })
 
 -- windows
 km.set("n", "<leader>sv", "<C-w>v") --split vertically
@@ -35,12 +35,8 @@ km.set("n", "gR", "<cmd>TroubleToggle lsp_references<cr>", { silent = true, nore
 
 -- harpoon
 km.set("n", "<leader>h", '<cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>') -- open the file naviagtion ui
-km.set("n", "<leader>a", '<cmd>lua require("harpoon.mark").add_file()<cr>') -- add file
 km.set("n", "<leader>1", '<cmd>lua require("harpoon.ui").nav_file(1)<cr>') -- go to file 1
 km.set("n", "<leader>2", '<cmd>lua require("harpoon.ui").nav_file(2)<cr>')
-km.set("n", "<leader>3", '<cmd>lua require("harpoon.ui").nav_file(3)<cr>')
-km.set("n", "<leader>4", '<cmd>lua require("harpoon.ui").nav_file(4)<cr>')
-km.set("n", "<leader>5", '<cmd>lua require("harpoon.ui").nav_file(5)<cr>')
 
 -- MarkdownTable
 km.set("n", "<leader>mt", "<cmd>TableModeToggle<cr>")
