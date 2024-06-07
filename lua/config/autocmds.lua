@@ -7,6 +7,7 @@ vim.api.nvim_create_user_command("CMode", function()
   vim.api.nvim_set_keymap("i", "jk", "<Esc>", { noremap = true, silent = true })
 end, {})
 
+-- back to code mode
 vim.api.nvim_create_user_command("MMode", function()
   vim.api.nvim_del_keymap("i", "jk")
 end, {})
@@ -18,7 +19,7 @@ local actions = require("telescope.actions")
 local action_state = require("telescope.actions.state")
 vim.api.nvim_create_user_command("BS", function()
   local opts = {
-    finder = find.new_table({ "json", "go", "markdown", "javascript", "typescript", "html", "xml" }),
+    finder = find.new_table({ "json", "go", "markdown", "javascript", "typescript", "html", "xml", "cypher" }),
     sorter = sort.get_generic_fuzzy_sorter({}),
   }
 
