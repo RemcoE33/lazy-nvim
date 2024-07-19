@@ -26,6 +26,11 @@ vim.g.vimwiki_list = {
   },
 }
 
+vim.opt.cursorline = true
+vim.cmd([[
+  highlight CursorLine guibg=#292D37
+]])
+
 vim.g.vimwiki_markdown_link_ext = 1
 
 -- UFO folding settings
