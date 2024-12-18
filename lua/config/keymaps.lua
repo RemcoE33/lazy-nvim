@@ -26,11 +26,6 @@ km.set("n", "N", "Nzzzv") -- center cursor while go to prev seach
 km.set("n", "J", "mzJ`z") -- places current line to the one above with space
 km.set("n", "G", "Gzz") -- center cursor while go to end of file
 
--- harpoon
-km.set("n", "<leader>1", '<cmd>lua require("harpoon.ui").nav_file(1)<cr>') -- go to file 1
-km.set("n", "<leader>2", '<cmd>lua require("harpoon.ui").nav_file(2)<cr>')
-km.set("n", "<leader>3", '<cmd>lua require("harpoon.ui").nav_file(3)<cr>')
-
 -- MarkdownTable
 km.set("n", "<leader>mt", "<cmd>TableModeToggle<cr>")
 
