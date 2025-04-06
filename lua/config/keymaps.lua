@@ -30,5 +30,12 @@ km.set("n", "G", "Gzz") -- center cursor while go to end of file
 km.set("n", "<leader>mt", "<cmd>TableModeToggle<cr>")
 
 -- UFO folding
-vim.keymap.set("n", "zR", require("ufo").openAllFolds)
-vim.keymap.set("n", "zM", require("ufo").closeAllFolds)
+km.set("n", "zR", require("ufo").openAllFolds)
+km.set("n", "zM", require("ufo").closeAllFolds)
+
+-- CodeCompanion
+km.set({ "n", "v" }, "<C-a>", "<cmd>CodeCompanionActions<cr>", { noremap = true, silent = true })
+km.set({ "n", "v" }, "<LocalLeader>a", "<cmd>CodeCompanionChat Toggle<cr>", { noremap = true, silent = true })
+km.set("v", "ga", "<cmd>CodeCompanionChat Add<cr>", { noremap = true, silent = true })
+-- Expand 'cc' into 'CodeCompanion' in the command line
+vim.cmd([[cab cc CodeCompanion]])
